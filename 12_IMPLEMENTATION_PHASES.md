@@ -147,18 +147,18 @@
 **Goal:** User can create and manage rules.
 
 ### Tasks
-- [ ] `RuleListScreen` + `RuleListViewModel`
-- [ ] `RuleBuilderScreen` + `RuleBuilderViewModel`
-- [ ] Condition row component (type picker, operator picker, value input)
-- [ ] Dynamic add/remove conditions
-- [ ] Rule preview text
-- [ ] AND/OR operator toggle
-- [ ] Action selector
-- [ ] Rule persistence (serialized to JSON in Room)
-- [ ] Enable/disable rules
-- [ ] Delete rules with confirmation
-- [ ] Connect rules to `DecisionEngine`
-- [ ] Rule ViewModel unit tests
+- [x] `RuleListScreen` + `RuleListViewModel`
+- [x] `RuleBuilderScreen` + `RuleBuilderViewModel`
+- [x] Condition row component (type picker, operator picker, value input)
+- [x] Dynamic add/remove conditions
+- [x] Rule preview text
+- [x] AND/OR operator toggle
+- [x] Action selector
+- [x] Rule persistence (serialized to JSON in Room)
+- [x] Enable/disable rules
+- [x] Delete rules with confirmation
+- [x] Connect rules to `DecisionEngine`
+- [x] Rule ViewModel unit tests
 
 ### Done When
 - Rules can be built, saved, enabled/disabled

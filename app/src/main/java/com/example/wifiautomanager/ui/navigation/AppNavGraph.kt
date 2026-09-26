@@ -108,5 +108,26 @@ fun AppNavGraph(
                 onBackClick = { navController.popBackStack() }
             )
         }
+        composable(Screen.RuleBuilder.route) {
+            val viewModel = hiltViewModel<com.example.wifiautomanager.ui.rules.RuleBuilderViewModel>()
+            com.example.wifiautomanager.ui.rules.RuleBuilderScreen(
+                viewModel = viewModel,
+                onBackClick = { navController.popBackStack() }
+            )
+        }
+        composable(
+            route = Screen.EditRule.ROUTE_PATTERN,
+            arguments = listOf(
+                androidx.navigation.navArgument("id") {
+                    type = androidx.navigation.NavType.LongType
+                }
+            )
+        ) {
+            val viewModel = hiltViewModel<com.example.wifiautomanager.ui.rules.RuleBuilderViewModel>()
+            com.example.wifiautomanager.ui.rules.RuleBuilderScreen(
+                viewModel = viewModel,
+                onBackClick = { navController.popBackStack() }
+            )
+        }
     }
 }
