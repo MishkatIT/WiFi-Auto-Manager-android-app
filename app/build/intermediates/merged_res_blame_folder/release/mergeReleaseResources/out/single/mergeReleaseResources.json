@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "com.example.wifiautomanager.app-release-68:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.wifiautomanager.app-main-69:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.wifiautomanager.app-release-68:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.wifiautomanager.app-main-69:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\seeml\\.gradle\\daemon\\8.10.2\\com.example.wifiautomanager.app-release-68:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\seeml\\.gradle\\daemon\\8.10.2\\com.example.wifiautomanager.app-main-69:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.wifiautomanager.app-release-68:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.wifiautomanager.app-main-69:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\seeml\\.gradle\\daemon\\8.10.2\\com.example.wifiautomanager.app-release-68:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\seeml\\.gradle\\daemon\\8.10.2\\com.example.wifiautomanager.app-main-69:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "com.example.wifiautomanager.app-release-68:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.wifiautomanager.app-main-69:/mipmap-anydpi-v26/ic_launcher.xml"
+    }
+]

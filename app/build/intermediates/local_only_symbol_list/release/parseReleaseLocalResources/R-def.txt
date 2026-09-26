@@ -1,0 +1,31 @@
+R_DEF: Internal format may change without notice
+local
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+string auto_manager_disabled
+string auto_manager_enabled
+string dashboard_title
+string diagnostics_title
+string internet_available
+string internet_checking
+string internet_unavailable
+string nav_dashboard
+string nav_diagnostics
+string nav_nearby
+string nav_networks
+string nav_rules
+string nav_settings
+string nearby_title
+string networks_title
+string rules_title
+string settings_title
+string status_connected
+string status_disabled
+string status_disconnected
+string status_scanning
+style Theme.WiFiAutoManager
+xml backup_rules
+xml data_extraction_rules

@@ -1,0 +1,70 @@
+com.example.wifiautomanager.app-activity-1.9.3-0 C:\Users\seeml\.gradle\caches\8.10.2\transforms\0a6ab40b8a83cff14ad1e8d4d4785fa2\transformed\activity-1.9.3\res
+com.example.wifiautomanager.app-customview-poolingcontainer-1.0.0-1 C:\Users\seeml\.gradle\caches\8.10.2\transforms\0b4eed46a058db3f5ddf8fcc23c677b3\transformed\customview-poolingcontainer-1.0.0\res
+com.example.wifiautomanager.app-core-runtime-2.2.0-2 C:\Users\seeml\.gradle\caches\8.10.2\transforms\0d8ce3bc137c184fdeb0552acab74840\transformed\core-runtime-2.2.0\res
+com.example.wifiautomanager.app-sqlite-framework-2.4.0-3 C:\Users\seeml\.gradle\caches\8.10.2\transforms\0f6fedfa9b23238914ccbd56bf854610\transformed\sqlite-framework-2.4.0\res
+com.example.wifiautomanager.app-work-runtime-2.10.0-4 C:\Users\seeml\.gradle\caches\8.10.2\transforms\1314216e0af5451066daeff1c7799c8b\transformed\work-runtime-2.10.0\res
+com.example.wifiautomanager.app-datastore-release-5 C:\Users\seeml\.gradle\caches\8.10.2\transforms\1701c4422b09ba752cdfd7b8efc64267\transformed\datastore-release\res
+com.example.wifiautomanager.app-activity-ktx-1.9.3-6 C:\Users\seeml\.gradle\caches\8.10.2\transforms\1e39ae40e52980acc01b483a4efc8da2\transformed\activity-ktx-1.9.3\res
+com.example.wifiautomanager.app-annotation-experimental-1.4.1-7 C:\Users\seeml\.gradle\caches\8.10.2\transforms\20819c4b99b93577d00507e792d8b66c\transformed\annotation-experimental-1.4.1\res
+com.example.wifiautomanager.app-ui-graphics-release-8 C:\Users\seeml\.gradle\caches\8.10.2\transforms\263960131d4f710ec0adff3b0c53c82c\transformed\ui-graphics-release\res
+com.example.wifiautomanager.app-lifecycle-runtime-release-9 C:\Users\seeml\.gradle\caches\8.10.2\transforms\2c35825a2066003f3683994e012978ec\transformed\lifecycle-runtime-release\res
+com.example.wifiautomanager.app-graphics-path-1.0.1-10 C:\Users\seeml\.gradle\caches\8.10.2\transforms\2fe126776a6fde75f72872b72cbcd5e0\transformed\graphics-path-1.0.1\res
+com.example.wifiautomanager.app-material3-release-11 C:\Users\seeml\.gradle\caches\8.10.2\transforms\302c9f462bf2641fa26faeb27bfdbb9d\transformed\material3-release\res
+com.example.wifiautomanager.app-sqlite-2.4.0-12 C:\Users\seeml\.gradle\caches\8.10.2\transforms\3ca01d7c3adda2c602c8757a7474b53f\transformed\sqlite-2.4.0\res
+com.example.wifiautomanager.app-ui-geometry-release-13 C:\Users\seeml\.gradle\caches\8.10.2\transforms\44b652ca26574a5bf5f462a56b281c59\transformed\ui-geometry-release\res
+com.example.wifiautomanager.app-tracing-1.2.0-14 C:\Users\seeml\.gradle\caches\8.10.2\transforms\44ff9bc38a76bc5d4d55df80623216c8\transformed\tracing-1.2.0\res
+com.example.wifiautomanager.app-material-ripple-release-15 C:\Users\seeml\.gradle\caches\8.10.2\transforms\49875f7343d4e0cb14811431cb738f09\transformed\material-ripple-release\res
+com.example.wifiautomanager.app-activity-compose-1.9.3-16 C:\Users\seeml\.gradle\caches\8.10.2\transforms\4bff474733e2f42934fea0ba0fccad06\transformed\activity-compose-1.9.3\res
+com.example.wifiautomanager.app-lifecycle-viewmodel-compose-release-17 C:\Users\seeml\.gradle\caches\8.10.2\transforms\52bf7d7c2b69281b11f751835bc4a7d0\transformed\lifecycle-viewmodel-compose-release\res
+com.example.wifiautomanager.app-animation-release-18 C:\Users\seeml\.gradle\caches\8.10.2\transforms\5699b3f074abcb5ed2bb4c07088de6e1\transformed\animation-release\res
+com.example.wifiautomanager.app-lifecycle-service-2.8.7-19 C:\Users\seeml\.gradle\caches\8.10.2\transforms\5a6c520df2d4241b29614a698125d176\transformed\lifecycle-service-2.8.7\res
+com.example.wifiautomanager.app-material-icons-extended-release-20 C:\Users\seeml\.gradle\caches\8.10.2\transforms\5cc8b6562c0c3221047b9e6a7a26d058\transformed\material-icons-extended-release\res
+com.example.wifiautomanager.app-ui-release-21 C:\Users\seeml\.gradle\caches\8.10.2\transforms\68ee5c19718164a48bb010101a832da1\transformed\ui-release\res
+com.example.wifiautomanager.app-lifecycle-livedata-2.8.7-22 C:\Users\seeml\.gradle\caches\8.10.2\transforms\6be66864804a5744e96f7e4ff5dbd1c4\transformed\lifecycle-livedata-2.8.7\res
+com.example.wifiautomanager.app-savedstate-1.2.1-23 C:\Users\seeml\.gradle\caches\8.10.2\transforms\727921ea71e1297c77424ce7e28807cb\transformed\savedstate-1.2.1\res
+com.example.wifiautomanager.app-lifecycle-viewmodel-savedstate-2.8.7-24 C:\Users\seeml\.gradle\caches\8.10.2\transforms\76066e4a068d8840b2276dbd44b1b462\transformed\lifecycle-viewmodel-savedstate-2.8.7\res
+com.example.wifiautomanager.app-material-icons-core-release-25 C:\Users\seeml\.gradle\caches\8.10.2\transforms\820b7a58fe719b29c4dc64ab5140735c\transformed\material-icons-core-release\res
+com.example.wifiautomanager.app-navigation-runtime-2.8.3-26 C:\Users\seeml\.gradle\caches\8.10.2\transforms\852eec616340b752e77de9ffae4397e5\transformed\navigation-runtime-2.8.3\res
+com.example.wifiautomanager.app-hilt-work-1.2.0-27 C:\Users\seeml\.gradle\caches\8.10.2\transforms\868a540c807b4e517766a852c2ba15c5\transformed\hilt-work-1.2.0\res
+com.example.wifiautomanager.app-foundation-layout-release-28 C:\Users\seeml\.gradle\caches\8.10.2\transforms\879a15236d3f5f3e08b0240d929e807b\transformed\foundation-layout-release\res
+com.example.wifiautomanager.app-foundation-release-29 C:\Users\seeml\.gradle\caches\8.10.2\transforms\8d96be20e8d61bd1c54b66406b9efec5\transformed\foundation-release\res
+com.example.wifiautomanager.app-navigation-common-2.8.3-30 C:\Users\seeml\.gradle\caches\8.10.2\transforms\9648b72214d560943b57bdfe74f83840\transformed\navigation-common-2.8.3\res
+com.example.wifiautomanager.app-lifecycle-livedata-core-ktx-2.8.7-31 C:\Users\seeml\.gradle\caches\8.10.2\transforms\97680faf11f97fdd97a08c78630a35ca\transformed\lifecycle-livedata-core-ktx-2.8.7\res
+com.example.wifiautomanager.app-room-ktx-2.6.1-32 C:\Users\seeml\.gradle\caches\8.10.2\transforms\97da3987c92486a5c74fce5680bab7c7\transformed\room-ktx-2.6.1\res
+com.example.wifiautomanager.app-runtime-release-33 C:\Users\seeml\.gradle\caches\8.10.2\transforms\99072882265f4e146860f64f1db834c0\transformed\runtime-release\res
+com.example.wifiautomanager.app-room-runtime-2.6.1-34 C:\Users\seeml\.gradle\caches\8.10.2\transforms\9f4d80be29d009b025ee5f2aec05259e\transformed\room-runtime-2.6.1\res
+com.example.wifiautomanager.app-lifecycle-viewmodel-release-35 C:\Users\seeml\.gradle\caches\8.10.2\transforms\a010f9b51e4ece0844a142fc75f1d37b\transformed\lifecycle-viewmodel-release\res
+com.example.wifiautomanager.app-datastore-preferences-release-36 C:\Users\seeml\.gradle\caches\8.10.2\transforms\a2bf696d6f53feee518e876d488a0296\transformed\datastore-preferences-release\res
+com.example.wifiautomanager.app-ui-tooling-preview-release-37 C:\Users\seeml\.gradle\caches\8.10.2\transforms\ac25e7e44afb5e53c13b26d86ee570d8\transformed\ui-tooling-preview-release\res
+com.example.wifiautomanager.app-tracing-ktx-1.2.0-38 C:\Users\seeml\.gradle\caches\8.10.2\transforms\ad8eb562c1f8914636368e6963eebe82\transformed\tracing-ktx-1.2.0\res
+com.example.wifiautomanager.app-savedstate-ktx-1.2.1-39 C:\Users\seeml\.gradle\caches\8.10.2\transforms\adb6b85cc227e40e5657b7b55662eecf\transformed\savedstate-ktx-1.2.1\res
+com.example.wifiautomanager.app-work-runtime-ktx-2.10.0-40 C:\Users\seeml\.gradle\caches\8.10.2\transforms\b30dcfadd9c0b90892b30f47fbb397fd\transformed\work-runtime-ktx-2.10.0\res
+com.example.wifiautomanager.app-datastore-core-release-41 C:\Users\seeml\.gradle\caches\8.10.2\transforms\b3e56a8bf9eb2e46bc2fdfe826d4321d\transformed\datastore-core-release\res
+com.example.wifiautomanager.app-core-ktx-1.15.0-42 C:\Users\seeml\.gradle\caches\8.10.2\transforms\b5b918cf3ac0451fbfe03986fd6c409e\transformed\core-ktx-1.15.0\res
+com.example.wifiautomanager.app-lifecycle-livedata-core-2.8.7-43 C:\Users\seeml\.gradle\caches\8.10.2\transforms\b5c778de7c6d8aef66b6443920bc7a8f\transformed\lifecycle-livedata-core-2.8.7\res
+com.example.wifiautomanager.app-lifecycle-viewmodel-ktx-2.8.7-44 C:\Users\seeml\.gradle\caches\8.10.2\transforms\b9df4332e8a486fc701f46ec225cfbf1\transformed\lifecycle-viewmodel-ktx-2.8.7\res
+com.example.wifiautomanager.app-runtime-saveable-release-45 C:\Users\seeml\.gradle\caches\8.10.2\transforms\bd9ad5ce9706d66d3bbdc8efe89410ab\transformed\runtime-saveable-release\res
+com.example.wifiautomanager.app-lifecycle-runtime-ktx-release-46 C:\Users\seeml\.gradle\caches\8.10.2\transforms\c1b400af7e278f92ed2dc7f846b4d9e7\transformed\lifecycle-runtime-ktx-release\res
+com.example.wifiautomanager.app-animation-core-release-47 C:\Users\seeml\.gradle\caches\8.10.2\transforms\c1fecf91b89b53d11ab147d4b257099e\transformed\animation-core-release\res
+com.example.wifiautomanager.app-navigation-common-ktx-2.8.3-48 C:\Users\seeml\.gradle\caches\8.10.2\transforms\c5ddb0093d4fda92d97baad7bc5a904e\transformed\navigation-common-ktx-2.8.3\res
+com.example.wifiautomanager.app-ui-unit-release-49 C:\Users\seeml\.gradle\caches\8.10.2\transforms\c8684e8442ffbd08ec7e984b187d08c0\transformed\ui-unit-release\res
+com.example.wifiautomanager.app-hilt-navigation-1.2.0-50 C:\Users\seeml\.gradle\caches\8.10.2\transforms\c97e96d605467aeac3bb49db85ee884e\transformed\hilt-navigation-1.2.0\res
+com.example.wifiautomanager.app-profileinstaller-1.3.1-51 C:\Users\seeml\.gradle\caches\8.10.2\transforms\d2027c24d24febcef0adfc109daa927d\transformed\profileinstaller-1.3.1\res
+com.example.wifiautomanager.app-startup-runtime-1.1.1-52 C:\Users\seeml\.gradle\caches\8.10.2\transforms\d707ff33aad540d68243bb60582c9769\transformed\startup-runtime-1.1.1\res
+com.example.wifiautomanager.app-lifecycle-runtime-compose-release-53 C:\Users\seeml\.gradle\caches\8.10.2\transforms\da9499a0bd988b56d83564d54788a8cc\transformed\lifecycle-runtime-compose-release\res
+com.example.wifiautomanager.app-hilt-navigation-compose-1.2.0-54 C:\Users\seeml\.gradle\caches\8.10.2\transforms\de6bb5e0f4f8372c97809613d4a6d203\transformed\hilt-navigation-compose-1.2.0\res
+com.example.wifiautomanager.app-ui-util-release-55 C:\Users\seeml\.gradle\caches\8.10.2\transforms\df19b56dabded5ae2c2c67ce5d058015\transformed\ui-util-release\res
+com.example.wifiautomanager.app-lifecycle-process-2.8.7-56 C:\Users\seeml\.gradle\caches\8.10.2\transforms\e07f9bb4e7e3d634a717280f4151ccc2\transformed\lifecycle-process-2.8.7\res
+com.example.wifiautomanager.app-security-crypto-1.1.0-alpha06-57 C:\Users\seeml\.gradle\caches\8.10.2\transforms\e1b45562bbde8b7426e8b7b8a4a36f2f\transformed\security-crypto-1.1.0-alpha06\res
+com.example.wifiautomanager.app-emoji2-1.3.0-58 C:\Users\seeml\.gradle\caches\8.10.2\transforms\e44460fe5392385ca55f865751f13aec\transformed\emoji2-1.3.0\res
+com.example.wifiautomanager.app-navigation-compose-2.8.3-59 C:\Users\seeml\.gradle\caches\8.10.2\transforms\f4c6b6b6610e246a3e8ce11031bd77bf\transformed\navigation-compose-2.8.3\res
+com.example.wifiautomanager.app-fragment-1.5.1-60 C:\Users\seeml\.gradle\caches\8.10.2\transforms\f628114b3c5b7195cc49807a88cb88dc\transformed\fragment-1.5.1\res
+com.example.wifiautomanager.app-ui-text-release-61 C:\Users\seeml\.gradle\caches\8.10.2\transforms\f82cdeb20bc20eccdc2b95dae8d8f9d4\transformed\ui-text-release\res
+com.example.wifiautomanager.app-core-1.15.0-62 C:\Users\seeml\.gradle\caches\8.10.2\transforms\fc11cf60380aa2882af3a4d23d40120d\transformed\core-1.15.0\res
+com.example.wifiautomanager.app-navigation-runtime-ktx-2.8.3-63 C:\Users\seeml\.gradle\caches\8.10.2\transforms\fd641b0cd2ad96acf1ffede392d203f1\transformed\navigation-runtime-ktx-2.8.3\res
+com.example.wifiautomanager.app-resValues-64 D:\WiFi Auto Manager android app\app\build\generated\res\resValues\release
+com.example.wifiautomanager.app-packageReleaseResources-65 D:\WiFi Auto Manager android app\app\build\intermediates\incremental\release\packageReleaseResources\merged.dir
+com.example.wifiautomanager.app-packageReleaseResources-66 D:\WiFi Auto Manager android app\app\build\intermediates\incremental\release\packageReleaseResources\stripped.dir
+com.example.wifiautomanager.app-release-67 D:\WiFi Auto Manager android app\app\build\intermediates\merged_res\release\mergeReleaseResources
+com.example.wifiautomanager.app-main-68 D:\WiFi Auto Manager android app\app\src\main\res
+com.example.wifiautomanager.app-release-69 D:\WiFi Auto Manager android app\app\src\release\res

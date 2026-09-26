@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.wifiautomanager.app-mergeDebugResources-70:/values-v23/values-v23.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\seeml\\.gradle\\caches\\8.10.2\\transforms\\1314216e0af5451066daeff1c7799c8b\\transformed\\work-runtime-2.10.0\\res\\values-v23\\values-v23.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,121",
+                        "endColumns": "65,62",
+                        "endOffsets": "116,179"
+                    }
+                }
+            ]
+        }
+    ]
+}
