@@ -1,11 +1,16 @@
 package com.example.wifiautomanager.data.local.db.entity
 
-// Room Entity for decision logging - implemented in Phase 2
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "decision_log")
 data class DecisionLogEntity(
-    val id: Long = 0,
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
     val timestampMs: Long = System.currentTimeMillis(),
-    val action: String,
-    val selectedSsid: String?,
+    val actionType: String,
+    val selectedNetworkId: Long? = null,
+    val currentSsid: String? = null,
+    val currentRssi: Int? = null,
     val reason: String,
-    val candidatesCount: Int
+    val detailJson: String = ""
 )

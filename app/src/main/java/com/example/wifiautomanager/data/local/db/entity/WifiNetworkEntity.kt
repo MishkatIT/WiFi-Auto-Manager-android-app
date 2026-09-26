@@ -1,8 +1,13 @@
 package com.example.wifiautomanager.data.local.db.entity
 
-// Room Entity for saved Wi-Fi networks - implemented in Phase 2
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import com.example.wifiautomanager.domain.model.SecurityType
+import com.example.wifiautomanager.domain.model.WifiNetwork
+
+@Entity(tableName = "wifi_networks")
 data class WifiNetworkEntity(
-    val id: Long = 0,
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
     val ssid: String,
     val securityType: String,
     val enabled: Boolean = true,
@@ -13,4 +18,36 @@ data class WifiNetworkEntity(
     val minimumImprovementDbm: Int = 10,
     val createdAt: Long = System.currentTimeMillis(),
     val updatedAt: Long = System.currentTimeMillis()
+)
+
+fun WifiNetworkEntity.toDomain(): WifiNetwork = WifiNetwork(
+    id = id,
+    ssid = ssid,
+    securityType = try {
+        SecurityType.valueOf(securityType)
+    } catch (e: Exception) {
+        SecurityType.UNKNOWN
+    },
+    enabled = enabled,
+    priority = priority,
+    minimumSignalDbm = minimumSignalDbm,
+    requiresInternet = requiresInternet,
+    minimumCandidateSignalDbm = minimumCandidateSignalDbm,
+    minimumImprovementDbm = minimumImprovementDbm,
+    createdAt = createdAt,
+    updatedAt = updatedAt
+)
+
+fun WifiNetwork.toEntity(): WifiNetworkEntity = WifiNetworkEntity(
+    id = id,
+    ssid = ssid,
+    securityType = securityType.name,
+    enabled = enabled,
+    priority = priority,
+    minimumSignalDbm = minimumSignalDbm,
+    requiresInternet = requiresInternet,
+    minimumCandidateSignalDbm = minimumCandidateSignalDbm,
+    minimumImprovementDbm = minimumImprovementDbm,
+    createdAt = createdAt,
+    updatedAt = updatedAt
 )

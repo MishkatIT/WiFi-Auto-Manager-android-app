@@ -1,13 +1,25 @@
 package com.example.wifiautomanager.data.repository
 
+import com.example.wifiautomanager.data.local.datastore.AppPreferencesDataStore
 import com.example.wifiautomanager.domain.model.AppSettings
 import com.example.wifiautomanager.domain.repository.SettingsRepository
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flowOf
+import javax.inject.Inject
+import javax.inject.Singleton
 
-// SettingsRepository implementation - wired to DataStore in Phase 2
-class SettingsRepositoryImpl : SettingsRepository {
-    override fun getSettings(): Flow<AppSettings> = flowOf(AppSettings())
-    override suspend fun updateSettings(settings: AppSettings) {}
-    override suspend fun setAutoManagerEnabled(enabled: Boolean) {}
+@Singleton
+class SettingsRepositoryImpl @Inject constructor(
+    private val appPreferencesDataStore: AppPreferencesDataStore
+) : SettingsRepository {
+
+    override fun getSettings(): Flow<AppSettings> =
+        appPreferencesDataStore.settingsFlow
+
+    override suspend fun updateSettings(settings: AppSettings) {
+        appPreferencesDataStore.updateSettings(settings)
+    }
+
+    override suspend fun setAutoManagerEnabled(enabled: Boolean) {
+        appPreferencesDataStore.setAutoManagerEnabled(enabled)
+    }
 }

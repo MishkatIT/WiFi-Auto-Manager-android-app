@@ -17,6 +17,9 @@ datastore = "1.1.1"
 workManager = "2.10.0"
 gson = "2.11.0"
 securityCrypto = "1.1.0-alpha06"
+coroutines = "1.9.0"
+robolectric = "4.14.1"
+coreTesting = "2.2.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -47,6 +50,10 @@ hilt-work = { group = "androidx.hilt", name = "hilt-work", version.ref = "hiltNa
 hilt-work-compiler = { group = "androidx.hilt", name = "hilt-compiler", version.ref = "hiltNavigationCompose" }
 security-crypto = { group = "androidx.security", name = "security-crypto", version.ref = "securityCrypto" }
 gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
+robolectric = { group = "org.robolectric", name = "robolectric", version.ref = "robolectric" }
+room-testing = { group = "androidx.room", name = "room-testing", version.ref = "room" }
+androidx-arch-core-testing = { group = "androidx.arch.core", name = "core-testing", version.ref = "coreTesting" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
