@@ -88,7 +88,9 @@ fun AppNavGraph(
             val viewModel = hiltViewModel<NearbyNetworksViewModel>()
             NearbyNetworksScreen(
                 viewModel = viewModel,
-                onBackClick = { navController.popBackStack() }
+                onBackClick = { navController.popBackStack() },
+                onEditNetworkClick = { id -> navController.navigate(Screen.EditNetwork(id).route) },
+                onAddNetworkWithSsid = { _ -> navController.navigate(Screen.AddNetwork.route) }
             )
         }
         composable(Screen.Diagnostics.route) {

@@ -92,18 +92,18 @@
 **Goal:** Real Wi-Fi data in the UI.
 
 ### Tasks
-- [ ] Implement `PermissionHelper` with API-level guards
-- [ ] Implement permission request flow in UI (rationale cards)
-- [ ] Implement `WifiConnectionMonitor` (NetworkCallback-based)
-- [ ] Implement `ConnectivityObserver`
-- [ ] Implement `InternetChecker` (NET_CAPABILITY_VALIDATED)
-- [ ] Implement `WifiScanner` with throttle handling
-- [ ] Connect `WifiScanner` to `NearbyNetworksScreen`
-- [ ] Wire `WifiConnectionMonitor` to `DashboardScreen`
-- [ ] Track `InternetState` including unavailable duration
-- [ ] Display scan throttle countdown
-- [ ] Handle all scan error states in UI
-- [ ] Handle permission denial gracefully in all screens
+- [x] Implement `PermissionHelper` with API-level guards
+- [x] Implement permission request flow in UI (rationale cards)
+- [x] Implement `WifiConnectionMonitor` (NetworkCallback-based)
+- [x] Implement `ConnectivityObserver`
+- [x] Implement `InternetChecker` (NET_CAPABILITY_VALIDATED)
+- [x] Implement `WifiScanner` with throttle handling
+- [x] Connect `WifiScanner` to `NearbyNetworksScreen`
+- [x] Wire `WifiConnectionMonitor` to `DashboardScreen`
+- [x] Track `InternetState` including unavailable duration
+- [x] Display scan throttle countdown
+- [x] Handle all scan error states in UI
+- [x] Handle permission denial gracefully in all screens
 
 ### Done When
 - Dashboard shows real SSID, RSSI, internet status

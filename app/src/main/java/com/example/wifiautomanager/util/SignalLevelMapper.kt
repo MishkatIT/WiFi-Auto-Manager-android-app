@@ -9,4 +9,21 @@ object SignalLevelMapper {
             else -> "Weak"
         }
     }
+
+    fun formatSignalDescription(rssi: Int): String {
+        return "${rssi} dBm (${getSignalCategory(rssi)})"
+    }
+
+    /**
+     * Maps RSSI to 0..4 bars
+     */
+    fun getBars(rssi: Int): Int {
+        return when {
+            rssi >= -55 -> 4
+            rssi >= -67 -> 3
+            rssi >= -78 -> 2
+            rssi >= -88 -> 1
+            else -> 0
+        }
+    }
 }
