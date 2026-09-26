@@ -46,6 +46,27 @@ fun AppNavGraph(
                 onEditNetworkClick = { id -> navController.navigate(Screen.EditNetwork(id).route) }
             )
         }
+        composable(Screen.AddNetwork.route) {
+            val viewModel = hiltViewModel<com.example.wifiautomanager.ui.networks.AddEditNetworkViewModel>()
+            com.example.wifiautomanager.ui.networks.AddEditNetworkScreen(
+                viewModel = viewModel,
+                onBackClick = { navController.popBackStack() }
+            )
+        }
+        composable(
+            route = Screen.EditNetwork.ROUTE_PATTERN,
+            arguments = listOf(
+                androidx.navigation.navArgument("id") {
+                    type = androidx.navigation.NavType.LongType
+                }
+            )
+        ) {
+            val viewModel = hiltViewModel<com.example.wifiautomanager.ui.networks.AddEditNetworkViewModel>()
+            com.example.wifiautomanager.ui.networks.AddEditNetworkScreen(
+                viewModel = viewModel,
+                onBackClick = { navController.popBackStack() }
+            )
+        }
         composable(Screen.More.route) {
             MoreScreen(
                 onNavigateToNearby = { navController.navigate(Screen.Nearby.route) },

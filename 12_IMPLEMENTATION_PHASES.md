@@ -40,16 +40,16 @@
 **Goal:** Persisted network and rule storage.
 
 ### Tasks
-- [ ] Create `AppDatabase` with Room
-- [ ] Create `WifiNetworkEntity`, `RuleEntity`, `DecisionLogEntity`
-- [ ] Create DAOs with Flow-returning queries
-- [ ] Configure Room schema export
-- [ ] Implement `CredentialStore` (Android Keystore + EncryptedSharedPreferences)
-- [ ] Implement `AppPreferencesDataStore`
-- [ ] Create `WifiRepository` interface and `WifiRepositoryImpl`
-- [ ] Create `SettingsRepository` interface and `SettingsRepositoryImpl`
-- [ ] Set up Hilt DI modules (`DatabaseModule`, `RepositoryModule`)
-- [ ] Write Room DAO unit tests
+- [x] Create `AppDatabase` with Room
+- [x] Create `WifiNetworkEntity`, `RuleEntity`, `DecisionLogEntity`
+- [x] Create DAOs with Flow-returning queries
+- [x] Configure Room schema export
+- [x] Implement `CredentialStore` (Android Keystore + EncryptedSharedPreferences)
+- [x] Implement `AppPreferencesDataStore`
+- [x] Create `WifiRepository` interface and `WifiRepositoryImpl`
+- [x] Create `SettingsRepository` interface and `SettingsRepositoryImpl`
+- [x] Set up Hilt DI modules (`DatabaseModule`, `RepositoryModule`)
+- [x] Write Room DAO unit tests
 
 ### Done When
 - Networks can be saved and retrieved across app restarts
@@ -63,21 +63,21 @@
 **Goal:** Full CRUD for saved networks.
 
 ### Tasks
-- [ ] `NetworkListScreen` + `NetworkListViewModel`
-- [ ] `AddEditNetworkScreen` + `AddEditNetworkViewModel`
-- [ ] SSID input with "Pick from nearby" placeholder (scanner not yet connected)
-- [ ] Security type selection
-- [ ] Password input (masked, never in UiState)
-- [ ] Priority slider
-- [ ] Signal threshold sliders
-- [ ] Minimum improvement slider
-- [ ] "Requires internet" toggle
-- [ ] Enable/Disable toggle per network
-- [ ] Delete with confirmation dialog
-- [ ] `ManageSavedNetworksUseCase`
-- [ ] Input validation with inline errors
-- [ ] Empty state for network list
-- [ ] ViewModel unit tests
+- [x] `NetworkListScreen` + `NetworkListViewModel`
+- [x] `AddEditNetworkScreen` + `AddEditNetworkViewModel`
+- [x] SSID input with "Pick from nearby" placeholder (scanner not yet connected)
+- [x] Security type selection
+- [x] Password input (masked, never in UiState)
+- [x] Priority slider
+- [x] Signal threshold sliders
+- [x] Minimum improvement slider
+- [x] "Requires internet" toggle
+- [x] Enable/Disable toggle per network
+- [x] Delete with confirmation dialog
+- [x] `ManageSavedNetworksUseCase`
+- [x] Input validation with inline errors
+- [x] Empty state for network list
+- [x] ViewModel unit tests
 
 ### Done When
 - Networks can be added, edited, deleted

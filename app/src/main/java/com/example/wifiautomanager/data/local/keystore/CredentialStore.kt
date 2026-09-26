@@ -3,6 +3,7 @@ package com.example.wifiautomanager.data.local.keystore
 import android.content.Context
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKey
+import com.example.wifiautomanager.domain.repository.CredentialRepository
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -10,7 +11,7 @@ import javax.inject.Singleton
 @Singleton
 class CredentialStore @Inject constructor(
     @ApplicationContext private val context: Context
-) {
+) : CredentialRepository {
     private val masterKey: MasterKey by lazy {
         MasterKey.Builder(context)
             .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)
@@ -27,21 +28,21 @@ class CredentialStore @Inject constructor(
         )
     }
 
-    fun savePassword(networkId: Long, password: String) {
+    override fun savePassword(networkId: Long, password: String) {
         prefs.edit().putString("pwd_$networkId", password).apply()
     }
 
-    fun getPassword(networkId: Long): String? =
+    override fun getPassword(networkId: Long): String? =
         prefs.getString("pwd_$networkId", null)
 
-    fun deletePassword(networkId: Long) {
+    override fun deletePassword(networkId: Long) {
         prefs.edit().remove("pwd_$networkId").apply()
     }
 
-    fun hasPassword(networkId: Long): Boolean =
+    override fun hasPassword(networkId: Long): Boolean =
         prefs.contains("pwd_$networkId")
 
-    fun clearAll() {
+    override fun clearAll() {
         prefs.edit().clear().apply()
     }
 }
