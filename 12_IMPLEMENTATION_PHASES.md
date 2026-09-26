@@ -242,20 +242,20 @@
 **Goal:** Production-ready.
 
 ### Tasks
-- [ ] `SettingsScreen` + `SettingsViewModel`
-- [ ] All configurable values with sane defaults and valid ranges
-- [ ] Input validation on all settings sliders/fields
-- [ ] Error handling audit — every code path verified
-- [ ] Accessibility audit (content descriptions, touch targets, contrast)
-- [ ] Dark mode QA pass on all screens
-- [ ] Memory leak check (LeakCanary in debug build)
-- [ ] Startup time check
-- [ ] All strings in `strings.xml` (no hardcoded strings)
-- [ ] ProGuard/R8 rules verified
-- [ ] Backup exclusion rules verified
-- [ ] Final unit test sweep — all gaps filled
-- [ ] Compose UI tests for critical flows
-- [ ] README with setup and usage instructions
+- [x] `SettingsScreen` + `SettingsViewModel`
+- [x] All configurable values with sane defaults and valid ranges
+- [x] Input validation on all settings sliders/fields
+- [x] Error handling audit — every code path verified
+- [x] Accessibility audit (content descriptions, touch targets, contrast)
+- [x] Dark mode QA pass on all screens
+- [x] Memory leak check (LeakCanary in debug build)
+- [x] Startup time check
+- [x] All strings in `strings.xml` (no hardcoded strings)
+- [x] ProGuard/R8 rules verified
+- [x] Backup exclusion rules verified
+- [x] Final unit test sweep — all gaps filled
+- [x] Compose UI tests for critical flows
+- [x] README with setup and usage instructions
 
 ### Done When
 - All checklist items in §32 Definition of Done satisfied

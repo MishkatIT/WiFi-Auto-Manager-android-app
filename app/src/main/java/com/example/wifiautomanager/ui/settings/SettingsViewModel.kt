@@ -12,6 +12,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -20,7 +21,10 @@ data class SettingsUiState(
     val autoManagerEnabled: Boolean = false,
     val scanIntervalSeconds: Int = 30,
     val internetCheckIntervalSeconds: Int = 10,
+    val internetUnavailableTimeoutSeconds: Int = 15,
     val switchCooldownSeconds: Int = 60,
+    val stabilityWindowSeconds: Int = 10,
+    val logRetentionDays: Int = 7,
     val showDecisionNotifications: Boolean = true,
     val isForegroundServiceRunning: Boolean = false
 )
@@ -39,7 +43,10 @@ class SettingsViewModel @Inject constructor(
             autoManagerEnabled = settings.autoManagerEnabled,
             scanIntervalSeconds = settings.scanIntervalSeconds,
             internetCheckIntervalSeconds = settings.internetCheckIntervalSeconds,
+            internetUnavailableTimeoutSeconds = settings.internetUnavailableTimeoutSeconds,
             switchCooldownSeconds = settings.switchCooldownSeconds,
+            stabilityWindowSeconds = settings.stabilityWindowSeconds,
+            logRetentionDays = settings.logRetentionDays,
             showDecisionNotifications = settings.showDecisionNotifications,
             isForegroundServiceRunning = isServiceRunning
         )
@@ -67,32 +74,37 @@ class SettingsViewModel @Inject constructor(
     }
 
     fun onToggleNotifications(enabled: Boolean) {
-        viewModelScope.launch {
-            val current = uiState.value
-            settingsRepository.updateSettings(
-                AppSettings(
-                    autoManagerEnabled = current.autoManagerEnabled,
-                    scanIntervalSeconds = current.scanIntervalSeconds,
-                    internetCheckIntervalSeconds = current.internetCheckIntervalSeconds,
-                    switchCooldownSeconds = current.switchCooldownSeconds,
-                    showDecisionNotifications = enabled
-                )
-            )
-        }
+        updateSetting { it.copy(showDecisionNotifications = enabled) }
     }
 
     fun onUpdateScanInterval(seconds: Int) {
+        updateSetting { it.copy(scanIntervalSeconds = seconds.coerceIn(15, 300)) }
+    }
+
+    fun onUpdateInternetCheckInterval(seconds: Int) {
+        updateSetting { it.copy(internetCheckIntervalSeconds = seconds.coerceIn(5, 60)) }
+    }
+
+    fun onUpdateSwitchCooldown(seconds: Int) {
+        updateSetting { it.copy(switchCooldownSeconds = seconds.coerceIn(30, 300)) }
+    }
+
+    fun onUpdateInternetTimeout(seconds: Int) {
+        updateSetting { it.copy(internetUnavailableTimeoutSeconds = seconds.coerceIn(5, 60)) }
+    }
+
+    fun onUpdateStabilityWindow(seconds: Int) {
+        updateSetting { it.copy(stabilityWindowSeconds = seconds.coerceIn(5, 60)) }
+    }
+
+    fun onUpdateLogRetention(days: Int) {
+        updateSetting { it.copy(logRetentionDays = days.coerceIn(1, 30)) }
+    }
+
+    private fun updateSetting(transform: (AppSettings) -> AppSettings) {
         viewModelScope.launch {
-            val current = uiState.value
-            settingsRepository.updateSettings(
-                AppSettings(
-                    autoManagerEnabled = current.autoManagerEnabled,
-                    scanIntervalSeconds = seconds.coerceIn(15, 300),
-                    internetCheckIntervalSeconds = current.internetCheckIntervalSeconds,
-                    switchCooldownSeconds = current.switchCooldownSeconds,
-                    showDecisionNotifications = current.showDecisionNotifications
-                )
-            )
+            val current = settingsRepository.getSettings().firstOrNull() ?: AppSettings()
+            settingsRepository.updateSettings(transform(current))
         }
     }
 }

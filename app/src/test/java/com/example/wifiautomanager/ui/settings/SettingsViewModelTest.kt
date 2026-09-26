@@ -100,4 +100,100 @@ class SettingsViewModelTest {
         val updated = fakeSettingsRepo.getSettings().first()
         assertEquals(15, updated.scanIntervalSeconds)
     }
+
+    @Test
+    fun testUpdateInternetCheckIntervalEnforcesBounds() = runTest {
+        backgroundScope.launch(UnconfinedTestDispatcher(testScheduler)) {
+            viewModel.uiState.collect {}
+        }
+        advanceUntilIdle()
+
+        viewModel.onUpdateInternetCheckInterval(100) // Upper limit is 60
+        advanceUntilIdle()
+        assertEquals(60, fakeSettingsRepo.getSettings().first().internetCheckIntervalSeconds)
+
+        viewModel.onUpdateInternetCheckInterval(2) // Lower limit is 5
+        advanceUntilIdle()
+        assertEquals(5, fakeSettingsRepo.getSettings().first().internetCheckIntervalSeconds)
+    }
+
+    @Test
+    fun testUpdateSwitchCooldownEnforcesBounds() = runTest {
+        backgroundScope.launch(UnconfinedTestDispatcher(testScheduler)) {
+            viewModel.uiState.collect {}
+        }
+        advanceUntilIdle()
+
+        viewModel.onUpdateSwitchCooldown(45)
+        advanceUntilIdle()
+        assertEquals(45, fakeSettingsRepo.getSettings().first().switchCooldownSeconds)
+
+        viewModel.onUpdateSwitchCooldown(500) // Upper limit is 300
+        advanceUntilIdle()
+        assertEquals(300, fakeSettingsRepo.getSettings().first().switchCooldownSeconds)
+
+        viewModel.onUpdateSwitchCooldown(10) // Lower limit is 30
+        advanceUntilIdle()
+        assertEquals(30, fakeSettingsRepo.getSettings().first().switchCooldownSeconds)
+    }
+
+    @Test
+    fun testUpdateInternetTimeoutEnforcesBounds() = runTest {
+        backgroundScope.launch(UnconfinedTestDispatcher(testScheduler)) {
+            viewModel.uiState.collect {}
+        }
+        advanceUntilIdle()
+
+        viewModel.onUpdateInternetTimeout(25)
+        advanceUntilIdle()
+        assertEquals(25, fakeSettingsRepo.getSettings().first().internetUnavailableTimeoutSeconds)
+
+        viewModel.onUpdateInternetTimeout(100) // Upper limit 60
+        advanceUntilIdle()
+        assertEquals(60, fakeSettingsRepo.getSettings().first().internetUnavailableTimeoutSeconds)
+
+        viewModel.onUpdateInternetTimeout(2) // Lower limit 5
+        advanceUntilIdle()
+        assertEquals(5, fakeSettingsRepo.getSettings().first().internetUnavailableTimeoutSeconds)
+    }
+
+    @Test
+    fun testUpdateStabilityWindowEnforcesBounds() = runTest {
+        backgroundScope.launch(UnconfinedTestDispatcher(testScheduler)) {
+            viewModel.uiState.collect {}
+        }
+        advanceUntilIdle()
+
+        viewModel.onUpdateStabilityWindow(20)
+        advanceUntilIdle()
+        assertEquals(20, fakeSettingsRepo.getSettings().first().stabilityWindowSeconds)
+
+        viewModel.onUpdateStabilityWindow(120) // Upper limit 60
+        advanceUntilIdle()
+        assertEquals(60, fakeSettingsRepo.getSettings().first().stabilityWindowSeconds)
+
+        viewModel.onUpdateStabilityWindow(1) // Lower limit 5
+        advanceUntilIdle()
+        assertEquals(5, fakeSettingsRepo.getSettings().first().stabilityWindowSeconds)
+    }
+
+    @Test
+    fun testUpdateLogRetentionEnforcesBounds() = runTest {
+        backgroundScope.launch(UnconfinedTestDispatcher(testScheduler)) {
+            viewModel.uiState.collect {}
+        }
+        advanceUntilIdle()
+
+        viewModel.onUpdateLogRetention(14)
+        advanceUntilIdle()
+        assertEquals(14, fakeSettingsRepo.getSettings().first().logRetentionDays)
+
+        viewModel.onUpdateLogRetention(50) // Upper limit 30
+        advanceUntilIdle()
+        assertEquals(30, fakeSettingsRepo.getSettings().first().logRetentionDays)
+
+        viewModel.onUpdateLogRetention(0) // Lower limit 1
+        advanceUntilIdle()
+        assertEquals(1, fakeSettingsRepo.getSettings().first().logRetentionDays)
+    }
 }

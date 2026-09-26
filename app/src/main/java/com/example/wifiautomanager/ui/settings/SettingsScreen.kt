@@ -14,9 +14,11 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Slider
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -26,6 +28,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import kotlin.math.roundToInt
 
 @Composable
 fun SettingsScreen(
@@ -107,7 +110,7 @@ fun SettingsScreen(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Column(modifier = Modifier.weight(1f)) {
-                    Text(text = "Decision Notifications", style = MaterialTheme.typography.titleMedium)
+                    Text(text = "Decision Notifications", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
                     Spacer(modifier = Modifier.height(4.dp))
                     Text(
                         text = "Notify when switching or recommending networks",
@@ -122,18 +125,84 @@ fun SettingsScreen(
             }
         }
 
-        // Engine intervals
+        // Engine intervals with sliders
         Card(modifier = Modifier.fillMaxWidth()) {
-            Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+            Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
                 Text(text = "Engine Timing Configuration", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
-                Text(text = "Wi-Fi Scan Interval: ${uiState.scanIntervalSeconds}s (battery-throttled)")
-                Text(text = "Internet Health Check: ${uiState.internetCheckIntervalSeconds}s")
-                Text(text = "Anti-Flapping Switch Cooldown: ${uiState.switchCooldownSeconds}s")
-                Text(
-                    text = "Foreground Service Status: ${if (uiState.isForegroundServiceRunning) "Running" else "Stopped"}",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                )
+
+                // Scan Interval
+                Column {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Text(text = "Scan Interval (battery-safe)", style = MaterialTheme.typography.bodyMedium)
+                        Text(text = "${uiState.scanIntervalSeconds}s", fontWeight = FontWeight.Bold)
+                    }
+                    Slider(
+                        value = uiState.scanIntervalSeconds.toFloat(),
+                        onValueChange = { viewModel.onUpdateScanInterval(it.roundToInt()) },
+                        valueRange = 15f..120f,
+                        steps = 6
+                    )
+                }
+
+                HorizontalDivider()
+
+                // Switch Cooldown
+                Column {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Text(text = "Switch Cooldown (Anti-Flapping)", style = MaterialTheme.typography.bodyMedium)
+                        Text(text = "${uiState.switchCooldownSeconds}s", fontWeight = FontWeight.Bold)
+                    }
+                    Slider(
+                        value = uiState.switchCooldownSeconds.toFloat(),
+                        onValueChange = { viewModel.onUpdateSwitchCooldown(it.roundToInt()) },
+                        valueRange = 30f..300f,
+                        steps = 8
+                    )
+                }
+
+                HorizontalDivider()
+
+                // Internet Check Interval
+                Column {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Text(text = "Internet Validation Check", style = MaterialTheme.typography.bodyMedium)
+                        Text(text = "${uiState.internetCheckIntervalSeconds}s", fontWeight = FontWeight.Bold)
+                    }
+                    Slider(
+                        value = uiState.internetCheckIntervalSeconds.toFloat(),
+                        onValueChange = { viewModel.onUpdateInternetCheckInterval(it.roundToInt()) },
+                        valueRange = 5f..60f,
+                        steps = 10
+                    )
+                }
+
+                HorizontalDivider()
+
+                // Log Retention Days
+                Column {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Text(text = "Decision Log Retention", style = MaterialTheme.typography.bodyMedium)
+                        Text(text = "${uiState.logRetentionDays} days", fontWeight = FontWeight.Bold)
+                    }
+                    Slider(
+                        value = uiState.logRetentionDays.toFloat(),
+                        onValueChange = { viewModel.onUpdateLogRetention(it.roundToInt()) },
+                        valueRange = 1f..30f,
+                        steps = 28
+                    )
+                }
             }
         }
 
@@ -146,7 +215,8 @@ fun SettingsScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(16.dp),
-                horizontalArrangement = Arrangement.SpaceBetween
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(text = "Open System Diagnostics", style = MaterialTheme.typography.titleMedium)
                 Text(text = "→", style = MaterialTheme.typography.titleMedium)
