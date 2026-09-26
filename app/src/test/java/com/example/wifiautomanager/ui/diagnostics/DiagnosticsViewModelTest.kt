@@ -27,6 +27,7 @@ class FakeDecisionRepo : DecisionRepository {
     private val _flow = MutableStateFlow<List<Decision>>(emptyList())
 
     override fun getRecentDecisions(limit: Int): Flow<List<Decision>> = _flow.asStateFlow()
+    override suspend fun getDecisionById(id: Long): Decision? = decisions.find { it.id == id }
     override suspend fun recordDecision(decision: Decision): Long {
         decisions.add(decision)
         _flow.value = decisions.toList()
@@ -67,7 +68,7 @@ class DiagnosticsViewModelTest {
 
         val state = viewModel.uiState.value
         assertEquals(0, state.totalSavedNetworks)
-        assertEquals(0, state.recentLogCount)
+        assertEquals(0, state.recentDecisions.size)
         assertTrue(state.autoManagerEnabled)
     }
 

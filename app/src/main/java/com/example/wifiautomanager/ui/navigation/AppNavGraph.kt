@@ -97,6 +97,21 @@ fun AppNavGraph(
             val viewModel = hiltViewModel<DiagnosticsViewModel>()
             DiagnosticsScreen(
                 viewModel = viewModel,
+                onDecisionClick = { id -> navController.navigate(Screen.DecisionDetail(id).route) },
+                onBackClick = { navController.popBackStack() }
+            )
+        }
+        composable(
+            route = Screen.DecisionDetail.ROUTE_PATTERN,
+            arguments = listOf(
+                androidx.navigation.navArgument("id") {
+                    type = androidx.navigation.NavType.LongType
+                }
+            )
+        ) {
+            val viewModel = hiltViewModel<com.example.wifiautomanager.ui.diagnostics.DecisionDetailViewModel>()
+            com.example.wifiautomanager.ui.diagnostics.DecisionDetailScreen(
+                viewModel = viewModel,
                 onBackClick = { navController.popBackStack() }
             )
         }

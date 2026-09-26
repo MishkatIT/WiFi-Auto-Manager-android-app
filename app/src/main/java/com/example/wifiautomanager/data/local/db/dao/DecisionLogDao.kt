@@ -15,6 +15,9 @@ interface DecisionLogDao {
     @Query("SELECT * FROM decision_log ORDER BY timestampMs DESC LIMIT :limit")
     fun getRecentLogs(limit: Int): Flow<List<DecisionLogEntity>>
 
+    @Query("SELECT * FROM decision_log WHERE id = :id")
+    suspend fun getLogById(id: Long): DecisionLogEntity?
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertLog(log: DecisionLogEntity): Long
 

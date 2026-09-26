@@ -5,6 +5,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface DecisionRepository {
     fun getRecentDecisions(limit: Int = 50): Flow<List<Decision>>
+    suspend fun getDecisionById(id: Long): Decision?
     suspend fun recordDecision(decision: Decision): Long
     suspend fun pruneOldDecisions(retentionDays: Int)
     suspend fun clearAll()

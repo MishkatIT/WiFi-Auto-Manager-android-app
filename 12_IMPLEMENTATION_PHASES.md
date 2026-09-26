@@ -218,17 +218,17 @@
 **Goal:** Full observability of app behavior.
 
 ### Tasks
-- [ ] `DiagnosticsScreen` + `DiagnosticsViewModel`
-- [ ] System status section (all permissions, service status)
-- [ ] Current state snapshot
-- [ ] Engine status (last scan, last decision, cooldown)
-- [ ] Android suggestion states per network
-- [ ] Decision log list (recent 20)
-- [ ] `DecisionDetailScreen` — full breakdown of one decision
-- [ ] Candidate evaluation table in decision detail
-- [ ] Rules applied / not applied section
-- [ ] Anti-flapping status in decision detail
-- [ ] "Why didn't it switch?" always answerable from this screen
+- [x] `DiagnosticsScreen` + `DiagnosticsViewModel`
+- [x] System status section (all permissions, service status)
+- [x] Current state snapshot
+- [x] Engine status (last scan, last decision, cooldown)
+- [x] Android suggestion states per network
+- [x] Decision log list (recent 20)
+- [x] `DecisionDetailScreen` — full breakdown of one decision
+- [x] Candidate evaluation table in decision detail
+- [x] Rules applied / not applied section
+- [x] Anti-flapping status in decision detail
+- [x] "Why didn't it switch?" always answerable from this screen
 
 ### Done When
 - User can always understand why the app made a decision
