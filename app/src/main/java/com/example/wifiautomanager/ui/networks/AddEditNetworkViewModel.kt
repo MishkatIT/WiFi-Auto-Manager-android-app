@@ -43,7 +43,8 @@ sealed interface AddEditNetworkEvent {
 @HiltViewModel
 class AddEditNetworkViewModel @Inject constructor(
     private val manageNetworksUseCase: ManageSavedNetworksUseCase,
-    savedStateHandle: SavedStateHandle
+    savedStateHandle: SavedStateHandle,
+    private val wifiSuggestionManager: com.example.wifiautomanager.wifi.WifiSuggestionManager? = null
 ) : ViewModel() {
 
     private val networkId: Long = savedStateHandle.get<Long>("id") ?: 0L
@@ -177,7 +178,15 @@ class AddEditNetworkViewModel @Inject constructor(
                 )
 
                 val pwdToStore = if (state.securityType == SecurityType.OPEN) null else password.ifBlank { null }
-                manageNetworksUseCase.saveNetwork(networkToSave, pwdToStore)
+                val savedId = manageNetworksUseCase.saveNetwork(networkToSave, pwdToStore)
+
+                if (networkToSave.enabled) {
+                    val finalPwd = pwdToStore ?: manageNetworksUseCase.getPassword(savedId)
+                    wifiSuggestionManager?.registerSuggestion(networkToSave.copy(id = savedId), finalPwd)
+                } else {
+                    wifiSuggestionManager?.removeSuggestion(networkToSave.copy(id = savedId))
+                }
+
                 _events.emit(AddEditNetworkEvent.SaveSuccess)
             } catch (e: Exception) {
                 _events.emit(AddEditNetworkEvent.ShowError(e.message ?: "Failed to save network"))

@@ -52,7 +52,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.filled.Warning
+import androidx.compose.material.icons.filled.Error
 import com.example.wifiautomanager.domain.model.SecurityType
+import com.example.wifiautomanager.domain.model.SuggestionState
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -97,6 +103,9 @@ fun NetworkListScreen(
                         .padding(horizontal = 16.dp, vertical = 8.dp),
                     verticalArrangement = Arrangement.spacedBy(12.dp)
                 ) {
+                    item {
+                        SuggestionInfoBanner(isSupported = uiState.isSuggestionSupported)
+                    }
                     items(uiState.networks, key = { it.id }) { item ->
                         NetworkCard(
                             item = item,
@@ -210,6 +219,9 @@ private fun NetworkCard(
                     )
                 }
             }
+
+            Spacer(modifier = Modifier.height(8.dp))
+            SuggestionStateBadge(state = item.suggestionState)
 
             Spacer(modifier = Modifier.height(10.dp))
 
@@ -341,4 +353,109 @@ private fun formatSecurityType(type: SecurityType): String = when (type) {
     SecurityType.WPA3_SAE -> "WPA3"
     SecurityType.WPA2_EAP -> "Enterprise"
     SecurityType.UNKNOWN -> "Unknown"
+}
+
+@Composable
+fun SuggestionInfoBanner(isSupported: Boolean) {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        shape = RoundedCornerShape(12.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = if (isSupported) {
+                MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.5f)
+            } else {
+                MaterialTheme.colorScheme.errorContainer.copy(alpha = 0.5f)
+            }
+        )
+    ) {
+        Row(
+            modifier = Modifier.padding(12.dp),
+            verticalAlignment = Alignment.Top
+        ) {
+            Icon(
+                imageVector = Icons.Default.Info,
+                contentDescription = null,
+                tint = if (isSupported) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.error,
+                modifier = Modifier.size(20.dp)
+            )
+            Spacer(modifier = Modifier.width(10.dp))
+            Column {
+                Text(
+                    text = if (isSupported) "Android Wi-Fi Suggestion Integration" else "Wi-Fi Suggestions Unsupported",
+                    style = MaterialTheme.typography.labelLarge,
+                    fontWeight = FontWeight.Bold,
+                    color = if (isSupported) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onErrorContainer
+                )
+                Spacer(modifier = Modifier.height(2.dp))
+                Text(
+                    text = if (isSupported) {
+                        "Networks are registered as system suggestions. Android OS evaluates candidates according to internal signal, security, and battery criteria, and may not switch immediately."
+                    } else {
+                        "Android 10 (API 29) or higher is required for Wi-Fi Network Suggestions. On older devices, the app tracks networks locally."
+                    },
+                    style = MaterialTheme.typography.bodySmall,
+                    color = if (isSupported) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onErrorContainer
+                )
+            }
+        }
+    }
+}
+
+@Composable
+fun SuggestionStateBadge(state: SuggestionState) {
+    val (bgColor, textColor, icon) = when (state) {
+        is SuggestionState.Registered -> Triple(
+            Color(0xFFE8F5E9),
+            Color(0xFF2E7D32),
+            Icons.Default.CheckCircle
+        )
+        is SuggestionState.Duplicate -> Triple(
+            Color(0xFFFFF3E0),
+            Color(0xFFE65100),
+            Icons.Default.Warning
+        )
+        is SuggestionState.NotAllowed -> Triple(
+            Color(0xFFFFEBEE),
+            Color(0xFFC62828),
+            Icons.Default.Error
+        )
+        is SuggestionState.Failed -> Triple(
+            Color(0xFFFFEBEE),
+            Color(0xFFC62828),
+            Icons.Default.Error
+        )
+        is SuggestionState.ApiNotSupported -> Triple(
+            Color(0xFFF5F5F5),
+            Color(0xFF616161),
+            Icons.Default.Info
+        )
+        is SuggestionState.NotRegistered -> Triple(
+            Color(0xFFEEEEEE),
+            Color(0xFF757575),
+            Icons.Default.Info
+        )
+    }
+
+    Box(
+        modifier = Modifier
+            .clip(RoundedCornerShape(6.dp))
+            .background(bgColor)
+            .padding(horizontal = 8.dp, vertical = 4.dp)
+    ) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Icon(
+                imageVector = icon,
+                contentDescription = null,
+                tint = textColor,
+                modifier = Modifier.size(12.dp)
+            )
+            Spacer(modifier = Modifier.width(4.dp))
+            Text(
+                text = state.label,
+                style = MaterialTheme.typography.labelSmall,
+                fontWeight = FontWeight.Medium,
+                color = textColor
+            )
+        }
+    }
 }

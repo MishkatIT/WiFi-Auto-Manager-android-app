@@ -172,15 +172,15 @@
 **Goal:** Suggestions registered with Android.
 
 ### Tasks
-- [ ] Implement `WifiSuggestionManager`
-- [ ] API 26–29 compatibility handling
-- [ ] Register suggestions when networks are added/updated/enabled
-- [ ] Remove suggestions when networks are deleted/disabled
-- [ ] Track `SuggestionState` per network
-- [ ] Display suggestion state in `NetworkListScreen`
-- [ ] Display suggestion state in `DiagnosticsScreen`
-- [ ] Handle: duplicate, not-allowed, failed, api-not-supported states
-- [ ] Notify user: "Android may not immediately use suggestions"
+- [x] Implement `WifiSuggestionManager`
+- [x] API 26–29 compatibility handling
+- [x] Register suggestions when networks are added/updated/enabled
+- [x] Remove suggestions when networks are deleted/disabled
+- [x] Track `SuggestionState` per network
+- [x] Display suggestion state in `NetworkListScreen`
+- [x] Display suggestion state in `DiagnosticsScreen`
+- [x] Handle: duplicate, not-allowed, failed, api-not-supported states
+- [x] Notify user: "Android may not immediately use suggestions"
 
 ### Done When
 - Suggestions registered for enabled networks
