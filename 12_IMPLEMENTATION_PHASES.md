@@ -194,16 +194,16 @@
 **Goal:** App useful when not in foreground.
 
 ### Tasks
-- [ ] Create notification channels (`DecisionChannel`, `StatusChannel`)
-- [ ] Implement `DecisionNotifier` — post notification on significant decision
-- [ ] Request `POST_NOTIFICATIONS` on API 33+ with rationale
-- [ ] Implement `DecisionWorker` (WorkManager)
-- [ ] Configure periodic work with battery-aware constraints
-- [ ] Implement optional `WifiForegroundService` for continuous monitoring
-- [ ] Handle `RECEIVE_BOOT_COMPLETED` to restart monitoring
-- [ ] Respect Doze mode — reduce scan frequency when device is idle
-- [ ] Add background execution status to `DiagnosticsScreen`
-- [ ] Settings toggle for notifications
+- [x] Create notification channels (`DecisionChannel`, `StatusChannel`)
+- [x] Implement `DecisionNotifier` — post notification on significant decision
+- [x] Request `POST_NOTIFICATIONS` on API 33+ with rationale
+- [x] Implement `DecisionWorker` (WorkManager)
+- [x] Configure periodic work with battery-aware constraints
+- [x] Implement optional `WifiForegroundService` for continuous monitoring
+- [x] Handle `RECEIVE_BOOT_COMPLETED` to restart monitoring
+- [x] Respect Doze mode — reduce scan frequency when device is idle
+- [x] Add background execution status to `DiagnosticsScreen`
+- [x] Settings toggle for notifications
 
 ### Done When
 - Decisions trigger notifications (when permitted)

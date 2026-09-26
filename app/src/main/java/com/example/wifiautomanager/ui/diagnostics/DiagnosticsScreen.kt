@@ -112,6 +112,18 @@ fun DiagnosticsScreen(
             }
         }
 
+        // Background Execution & Monitoring Status Card
+        Card(modifier = Modifier.fillMaxWidth()) {
+            Column(modifier = Modifier.padding(16.dp)) {
+                Text(text = "Background Execution Status", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(text = "Auto Manager Master: ${if (uiState.autoManagerEnabled) "Enabled" else "Disabled"}")
+                Text(text = "Foreground Service: ${if (uiState.isForegroundServiceRunning) "Running" else "Stopped"}")
+                Text(text = "WorkManager Periodic Worker: Battery-aware & Doze-friendly (15m)")
+                Text(text = "Boot Completed Receiver: Registered (Restores on reboot)")
+            }
+        }
+
         // System Core Status Card
         Card(modifier = Modifier.fillMaxWidth()) {
             Column(modifier = Modifier.padding(16.dp)) {

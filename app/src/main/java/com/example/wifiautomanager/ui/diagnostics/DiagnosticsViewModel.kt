@@ -3,8 +3,10 @@ package com.example.wifiautomanager.ui.diagnostics
 import android.os.Build
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.wifiautomanager.background.WifiForegroundService
 import com.example.wifiautomanager.domain.model.SuggestionState
 import com.example.wifiautomanager.domain.repository.DecisionRepository
+import com.example.wifiautomanager.domain.repository.SettingsRepository
 import com.example.wifiautomanager.domain.repository.WifiRepository
 import com.example.wifiautomanager.wifi.WifiSuggestionManager
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -14,7 +16,6 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.update
 import javax.inject.Inject
 
@@ -26,6 +27,8 @@ data class DiagnosticsUiState(
     val androidSdkInt: Int = Build.VERSION.SDK_INT,
     val totalSavedNetworks: Int = 0,
     val activeSuggestionsCount: Int = 0,
+    val autoManagerEnabled: Boolean = false,
+    val isForegroundServiceRunning: Boolean = false,
     val suggestionStates: Map<Long, SuggestionState> = emptyMap()
 )
 
@@ -33,6 +36,7 @@ data class DiagnosticsUiState(
 class DiagnosticsViewModel @Inject constructor(
     private val wifiRepository: WifiRepository,
     private val decisionRepository: DecisionRepository,
+    private val settingsRepository: SettingsRepository,
     private val wifiSuggestionManager: WifiSuggestionManager? = null
 ) : ViewModel() {
 
@@ -54,14 +58,18 @@ class DiagnosticsViewModel @Inject constructor(
         combine(
             wifiRepository.getAllNetworks(),
             decisionRepository.getRecentDecisions(50),
+            settingsRepository.getSettings(),
+            WifiForegroundService.isRunning,
             suggestionFlow
-        ) { networks, decisions, suggestions ->
+        ) { networks, decisions, settings, isServiceRunning, suggestions ->
             val activeCount = suggestions.values.count { it is SuggestionState.Registered }
             _uiState.update {
                 it.copy(
                     totalSavedNetworks = networks.size,
                     recentLogCount = decisions.size,
                     activeSuggestionsCount = activeCount,
+                    autoManagerEnabled = settings.autoManagerEnabled,
+                    isForegroundServiceRunning = isServiceRunning,
                     suggestionStates = suggestions
                 )
             }
