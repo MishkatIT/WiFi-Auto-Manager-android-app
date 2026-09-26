@@ -118,21 +118,21 @@
 **Goal:** Core logic working, fully tested.
 
 ### Tasks
-- [ ] Implement `Condition` sealed hierarchy
-- [ ] Implement `ConditionEvaluator`
-- [ ] Implement `RuleEvaluator` (AND/OR/NOT)
-- [ ] Implement `AntiFlappingGuard`
-- [ ] Implement `CandidateSelector`
-- [ ] Implement `DecisionEngine`
-- [ ] Implement `DecisionExplainer`
-- [ ] Implement `RunDecisionCycleUseCase`
-- [ ] Implement `DecisionLogDao` and persistence
-- [ ] Wire decision cycle to connection/scan events
-- [ ] Emit decisions to Dashboard
-- [ ] Unit tests for all 7 documented scenarios
-- [ ] Unit tests for all condition types
-- [ ] Unit tests for AND/OR/NOT combinations
-- [ ] Unit tests for anti-flapping
+- [x] Implement `Condition` sealed hierarchy
+- [x] Implement `ConditionEvaluator`
+- [x] Implement `RuleEvaluator` (AND/OR/NOT)
+- [x] Implement `AntiFlappingGuard`
+- [x] Implement `CandidateSelector`
+- [x] Implement `DecisionEngine`
+- [x] Implement `DecisionExplainer`
+- [x] Implement `RunDecisionCycleUseCase`
+- [x] Implement `DecisionLogDao` and persistence
+- [x] Wire decision cycle to connection/scan events
+- [x] Emit decisions to Dashboard
+- [x] Unit tests for all 7 documented scenarios
+- [x] Unit tests for all condition types
+- [x] Unit tests for AND/OR/NOT combinations
+- [x] Unit tests for anti-flapping
 
 ### Done When
 - All decision scenarios produce correct outcomes

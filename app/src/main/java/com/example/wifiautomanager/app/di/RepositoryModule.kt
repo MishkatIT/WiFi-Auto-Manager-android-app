@@ -31,4 +31,8 @@ abstract class RepositoryModule {
     @Binds
     @Singleton
     abstract fun bindCredentialRepository(impl: com.example.wifiautomanager.data.local.keystore.CredentialStore): com.example.wifiautomanager.domain.repository.CredentialRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindDecisionRepository(impl: com.example.wifiautomanager.data.repository.DecisionRepositoryImpl): com.example.wifiautomanager.domain.repository.DecisionRepository
 }

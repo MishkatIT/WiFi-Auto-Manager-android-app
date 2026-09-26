@@ -21,5 +21,29 @@ object UseCaseModule {
     ): ManageSavedNetworksUseCase {
         return ManageSavedNetworksUseCase(wifiRepository, credentialRepository)
     }
+
+    @Provides
+    @Singleton
+    fun provideDecisionEngine(): com.example.wifiautomanager.domain.decision.DecisionEngine {
+        return com.example.wifiautomanager.domain.decision.DecisionEngine()
+    }
+
+    @Provides
+    @Singleton
+    fun provideRunDecisionCycleUseCase(
+        decisionEngine: com.example.wifiautomanager.domain.decision.DecisionEngine,
+        wifiRepository: WifiRepository,
+        ruleRepository: com.example.wifiautomanager.domain.repository.RuleRepository,
+        settingsRepository: com.example.wifiautomanager.domain.repository.SettingsRepository,
+        decisionRepository: com.example.wifiautomanager.domain.repository.DecisionRepository
+    ): com.example.wifiautomanager.domain.usecase.RunDecisionCycleUseCase {
+        return com.example.wifiautomanager.domain.usecase.RunDecisionCycleUseCase(
+            decisionEngine,
+            wifiRepository,
+            ruleRepository,
+            settingsRepository,
+            decisionRepository
+        )
+    }
 }
 
